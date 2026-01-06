@@ -6,94 +6,91 @@
     <title>Casey | Editor, Writer, Marketing Manager</title>
     <style>
         :root {
-            /* Metallic Bronze Palette */
-            --bg-color: #1a1412; /* Darker base to make bronze pop */
-            --bronze-light: #cd7f32;
-            --bronze-mid: #a97142;
-            --bronze-dark: #704214;
-            --text-main: #e3d5ca;
-            --glass: rgba(255, 255, 255, 0.03);
+            --bg-color: #1a0a0a; /* Deep burgundy black */
+            --burgundy-bright: #800020;
+            --burgundy-glow: #a52a2a;
+            --text-main: #f5e6e8;
+            --accent-gold: #ffb347; /* Bitcoin gold for accents */
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
-            background-image: radial-gradient(circle at center, #2c1e18 0%, #1a1412 100%);
+            background-image: radial-gradient(circle at center, #2d0505 0%, #1a0a0a 100%);
             color: var(--text-main);
             margin: 0;
             display: flex;
             justify-content: center;
             padding-top: 50px;
             min-height: 100vh;
+            overflow-x: hidden;
+            cursor: crosshair;
         }
 
         .container {
             max-width: 700px;
             width: 90%;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
-        /* 3D Profile Section */
+        /* Profile Section & Laser Eyes */
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
         .profile-pic {
             width: 180px;
             height: 180px;
             border-radius: 12px;
             object-fit: cover;
-            margin-bottom: 25px;
-            /* 3D Bronze Border Effect */
-            border: 4px solid var(--bronze-mid);
-            box-shadow: 
-                0 10px 20px rgba(0,0,0,0.5),
-                inset 0 0 15px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-        }
-        
-        .profile-pic:hover {
-            transform: translateY(-5px) scale(1.02);
+            border: 3px solid var(--burgundy-bright);
+            box-shadow: 0 0 20px rgba(128, 0, 32, 0.5);
         }
 
-        /* Metallic Gradient Title */
+        /* 3D Title */
         h1 {
-            background: linear-gradient(to bottom, #f9d99a 0%, #cd7f32 50%, #704214 100%);
+            background: linear-gradient(to bottom, #ff9d00, #800020);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 0;
-            font-size: 2.5rem;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+            font-size: 2.8rem;
+            filter: drop-shadow(0 4px 4px rgba(0,0,0,0.8));
+            letter-spacing: 2px;
         }
 
         .subtitle {
-            color: var(--bronze-mid);
+            color: var(--burgundy-glow);
             font-size: 1.1rem;
             margin-top: 8px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            font-weight: bold;
         }
 
-        /* 3D Navigation Buttons */
+        /* 3D Navigation */
         nav {
             margin: 35px 0;
             display: flex;
             justify-content: center;
             gap: 15px;
-            flex-wrap: wrap;
         }
 
         nav a {
             text-decoration: none;
             color: #fff;
-            padding: 10px 20px;
-            background: linear-gradient(145deg, #a97142, #704214);
-            border-radius: 8px;
-            font-weight: 500;
-            box-shadow: 4px 4px 8px #0e0a09, -2px -2px 6px rgba(255,255,255,0.05);
-            transition: all 0.2s ease;
+            padding: 12px 24px;
+            background: linear-gradient(145deg, #800020, #4d0013);
+            border-radius: 4px;
+            font-weight: bold;
+            box-shadow: 5px 5px 0px #2a000a;
+            transition: 0.1s;
         }
 
         nav a:hover {
-            box-shadow: 2px 2px 4px #0e0a09;
-            transform: translateY(2px);
-            filter: brightness(1.1);
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #2a000a;
         }
 
         /* Welcome Section */
@@ -101,105 +98,115 @@
             text-align: left;
             margin-top: 40px;
             padding: 25px;
-            background: var(--glass);
-            border-radius: 15px;
-            border: 1px solid rgba(205, 127, 50, 0.2);
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+            background: rgba(128, 0, 32, 0.1);
+            border: 1px solid var(--burgundy-bright);
+            border-radius: 8px;
         }
 
-        h2 {
-            color: var(--bronze-light);
-            display: inline-block;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
+        h2 { color: var(--accent-gold); }
+        hr { border: 1px solid var(--burgundy-bright); margin-bottom: 20px; }
 
-        hr {
-            border: 0;
-            height: 2px;
-            background: linear-gradient(to right, var(--bronze-dark), var(--bronze-light), var(--bronze-dark));
-            margin-bottom: 20px;
-        }
-
-        .welcome-text {
-            line-height: 1.6;
-            color: #d1c1b5;
-            font-size: 1.05rem;
-        }
-
-        .welcome-text a {
-            color: var(--bronze-light);
-            text-decoration: none;
-            border-bottom: 1px dashed var(--bronze-light);
-        }
-
-        /* Footer Socials */
-        .social-links {
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding-bottom: 50px;
-        }
-
-        .social-links a {
-            text-decoration: none;
-            color: var(--bronze-mid);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--bronze-light);
-        }
-
-        .sun-icon {
+        /* Rotating Pixel Bitcoin */
+        .btc-pixel {
             position: absolute;
             top: 20px;
             right: 20px;
-            font-size: 1.5rem;
-            filter: drop-shadow(0 0 10px orange);
+            width: 50px;
+            height: 50px;
+            animation: rotateBtc 4s linear infinite;
         }
+
+        @keyframes rotateBtc {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        /* Laser Beam Style */
+        .laser {
+            position: fixed;
+            height: 4px;
+            background: #ff0000;
+            box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+            z-index: 999;
+            pointer-events: none;
+            transform-origin: left center;
+        }
+
+        .social-links a { color: var(--burgundy-bright); text-decoration: none; font-weight: bold; margin: 0 15px;}
     </style>
 </head>
 <body>
 
-    <div class="sun-icon">☀️</div>
+    <div class="btc-pixel">
+        <svg viewBox="0 0 32 32" fill="#ff9d00">
+            <path d="M24 10.3c-.4-2.6-2.1-3.6-4.5-4l-.9-3.6h-2.2l.9 3.5c-.6.1-1.2.3-1.8.4l-.9-3.7h-2.2l.9 3.6c-.5 0-1 .1-1.5.2L8.2 2l-1.6.4 1.1 4.3c-.4.2-.7.4-1.1.6l-1.1-4.3-1.6.4 1.1 4.5c-.3.2-.6.4-.8.7l-3-1.2-.6 1.5 2.8 1.1c-.1.3-.1.6-.2.9l-2.8-1.1-.6 1.5 2.8 1.1c0 .4 0 .8.1 1.2L1 18l.6 1.5 2.7-1.1c.2.6.4 1.1.7 1.7l-2.7 1.1.6 1.5 2.7-1.1c.4.5.8.9 1.3 1.3l-1.1 4.4 1.6.4 1.1-4.4c.5.1 1 .2 1.5.2l-1.1 4.4 1.6.4 1.1-4.4c.6.1 1.2.2 1.8.2l-1.1 4.4 2.2-.1.9-3.6c2.5-.4 4.4-1.4 4.8-4.2.3-2.3-1.1-3.5-2.8-4.1 1.3-.3 2.3-1.1 2.6-2.8zm-4.7 9.1c-.4 2.1-3.5 1-4.5.7l.8-3.2c1 .3 4.1.8 3.7 2.5zm.4-6.3c-.3 1.9-3 1-3.8.7l.7-2.9c.8.2 3.4.6 3.1 2.2z"/>
+        </svg>
+    </div>
 
     <div class="container">
-        <img src="https://pbs.twimg.com/profile_images/2005335755984621568/giIaGJXN_400x400.jpg" alt="Profile" class="profile-pic">
+        <div class="profile-wrapper" id="profileContainer">
+            <img src="https://pbs.twimg.com/profile_images/2005335755984621568/giIaGJXN_400x400.jpg" alt="Profile" class="profile-pic" id="avatar">
+        </div>
 
-        <h1>Casey</h1>
-        <p class="subtitle">Editor | Marketing Manager</p>
+        <h1>CASEY</h1>
+        <p class="subtitle">EDITOR | MARKETING MANAGER</p>
 
         <nav>
-            <a href="https://bitcoinmagazine.com/authors/casey">All My Articles</a>
-            <a href="https://btccasey.github.io/bitscry/">Bitscry Project</a>
+            <a href="https://bitcoinmagazine.com/authors/casey">ARTICLES</a>
+            <a href="https://btccasey.github.io/bitscry/">BITSCRY</a>
         </nav>
 
         <div class="welcome-section">
-            <h2>Welcome</h2>
+            <h2>WELCOME</h2>
             <hr>
             <p class="welcome-text">
-                🌎 Marketing Manager @ The Bitcoin Conference | Globe Master @ <a href="https://btccasey.github.io/bitscry/">Bitscry</a> 
+                🌎 Marketing Manager @ The Bitcoin Conference | Globe Master @ <a href="https://btccasey.github.io/bitscry/" style="color:var(--accent-gold)">Bitscry</a> 
             </p>
         </div>
 
-        <div class="social-links">
-            <a href="https://github.com/BtcCasey">
-                <svg height="22" width="22" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-                GitHub
-            </a>
-            <a href="https://X.com/btccasey">
-                <svg height="20" width="20" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-                Twitter
-            </a>
+        <div class="social-links" style="margin-top:40px;">
+            <a href="https://github.com/BtcCasey">GITHUB</a>
+            <a href="https://X.com/btccasey">TWITTER</a>
         </div>
     </div>
 
+    <script>
+        let lastMousePos = { x: 0, y: 0 };
+        document.addEventListener('mousemove', (e) => {
+            lastMousePos.x = e.clientX;
+            lastMousePos.y = e.clientY;
+        });
+
+        function shootLasers() {
+            const avatar = document.getElementById('avatar').getBoundingClientRect();
+            const startX = avatar.left + (avatar.width / 2);
+            const startY = avatar.top + (avatar.height / 3); // Shooting from "eye" level
+
+            // Create two lasers (left and right eye)
+            for (let i = 0; i < 2; i++) {
+                const laser = document.createElement('div');
+                laser.className = 'laser';
+                document.body.appendChild(laser);
+
+                const offset = i === 0 ? -15 : 15;
+                const angle = Math.atan2(lastMousePos.y - startY, lastMousePos.x - (startX + offset));
+                const distance = Math.sqrt(Math.pow(lastMousePos.x - (startX + offset), 2) + Math.pow(lastMousePos.y - startY, 2));
+
+                laser.style.width = distance + 'px';
+                laser.style.left = (startX + offset) + 'px';
+                laser.style.top = startY + 'px';
+                laser.style.transform = `rotate(${angle}rad)`;
+
+                // Remove laser after 200ms
+                setTimeout(() => laser.remove(), 200);
+            }
+        }
+
+        // Shoot lasers every 30 seconds
+        setInterval(shootLasers, 30000);
+        
+        // Initial shot after 5 seconds for fun
+        setTimeout(shootLasers, 5000);
+    </script>
 </body>
 </html>
